@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import sys
 
-img = cv2.imread("lena.jpg")
+img = cv2.imread("../lena.jpg")
 
 print(img.shape)
 
