@@ -15,7 +15,7 @@ def mouse_click(event, x, y, flags, param):
 
 def resize_img():
     pts1 = np.float32([points[0], points[1], points[2], points[3]])
-    pts2 = np.float32([[0, 0], [347, 0], [347, 280], [0, 280]])
+    pts2 = np.float32([[0, 0], [cols, 0], [cols, rows], [0, rows]])
 
     t_a = cv2.getPerspectiveTransform(pts1, pts2)
     wps = cv2.warpPerspective(img, t_a, (cols, rows), flags=cv2.INTER_LANCZOS4)
