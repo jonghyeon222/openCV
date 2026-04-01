@@ -18,6 +18,10 @@ def color_print(f_m, c_r):
     lower = np.array(c_r[0])
     upper = np.array(c_r[1])
     mask = cv2.inRange(hsv, lower, upper)
+
+    kernel = np.ones((5, 5), np.uint8)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
+    mask = cv2.dilate(mask, kernel, iterations=1)
     return mask
 
 def get_xy(m_k):
